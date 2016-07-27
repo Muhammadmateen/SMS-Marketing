@@ -42,7 +42,14 @@ angular.module('starter', ['ionic','ngCordova'])
     templateUrl: 'components/sendSms/sendSms.html',
     controller: 'smsListController',
     controllerAs: 'sms'
-  });
+    })
+
+    .state('grouplist',{
+    url:'/grouplist',
+    templateUrl: 'components/groupList/groupList.html',
+    controller: 'groupListController',
+    controllerAs: 'groups'
+    });
 
 
     $urlRouterProvider.otherwise('contactslist');
