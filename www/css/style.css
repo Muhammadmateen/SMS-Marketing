@@ -1,1 +1,11 @@
 /* Empty. Add your own CSS if you like */
+
+
+.alignIcon
+{
+  font-size: 25px;
+  position: absolute;
+  right: 40px;
+  margin-top: 4px;
+}
+

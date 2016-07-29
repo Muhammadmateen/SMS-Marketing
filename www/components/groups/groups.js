@@ -9,21 +9,28 @@
 
   angular.module('starter')
 
-    .controller("groupListController",function($cordovaSQLite)
+    .controller("groupsController",function($cordovaSQLite,$ionicTabsDelegate)
     {
+     /* console.log("Data in groups controller");
+      console.log($ionicTabsDelegate.selectedIndex());*/
 
       var _self = this;
 
-      var db = $cordovaSQLite.openDB({ name: "sms_marketing" ,location: 'default'});
+      _self.check = function()
+      {
+        console.log("OK OK ");
+      };
+
+      //var db = $cordovaSQLite.openDB({ name: "sms_marketing" ,location: 'default'});
 
 
-
+/*
       _self.fetchGroupList = function()
       {
         var groupList_query = "SELECT * FROM groups;";
         $cordovaSQLite.execute(db, groupList_query).then(function(res) {
 
-        /*  console.log("Group Names : ",res);*/
+        /!*  console.log("Group Names : ",res);*!/
           var alldata = res.rows.item;
 
           if(res.rows.length)
@@ -80,8 +87,7 @@
           _self.groupname = "";
 
         });
-      };
-
+      };*/
 
 
 

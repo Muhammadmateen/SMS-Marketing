@@ -1,0 +1,18 @@
+
+<ion-view>
+  <ion-content>
+
+    <!--<h1>Contacts is there</h1>-->
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <div class="list">
+      <a class="item item-avatar" href="#" ng-repeat="details in contacts.data track by $index" on-hold="contacts.selectedItem($index)">
+        <img ng-src="{{details.img || default_img_path}}">
+        <h2>{{details.name}}</h2>
+        <p>{{details.description}}</p>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -27,10 +27,29 @@ angular.module('starter', ['ionic','ngCordova'])
 })
 
 
-  .config(function($stateProvider,$urlRouterProvider)
+  .config(function($stateProvider,$urlRouterProvider,$ionicConfigProvider)
   {
 
-    $stateProvider.state('contactslist',{
+    $stateProvider.state('home',{
+      url:'/home',
+      views: {
+        'groups': {
+          templateUrl: 'components/groups/groups.html',
+          controller: 'groupsController',
+          controllerAs: 'groups'
+        },
+        'contacts': {
+          templateUrl: 'components/contacts/contacts.html',
+          controller: 'contactsController',
+          controllerAs: 'contacts'
+        }
+      }
+    })
+
+    $ionicConfigProvider.tabs.position('top');
+
+
+    /*$stateProvider.state('contactslist',{
       url:'/contactslist',
       templateUrl: 'components/getContacts/getContacts.html',
       controller: 'contactsListController',
@@ -44,14 +63,38 @@ angular.module('starter', ['ionic','ngCordova'])
     controllerAs: 'sms'
     })
 
-    .state('grouplist',{
-    url:'/grouplist',
-    templateUrl: 'components/groupList/groupList.html',
-    controller: 'groupListController',
+      .state('main',{
+        url:'/main',
+        abstract:true,
+        templateUrl: 'components/main/main.html'
+      })
+
+      .state('dash',{
+        url:"/dash",
+        templateUrl:'components/main/main.html',
+        Abstract:true
+      })
+
+
+
+
+
+
+    .state('groups',{
+    url:'/groups',
+    templateUrl: 'components/groups/groups.html',
+    controller: 'groupsController',
     controllerAs: 'groups'
-    });
+    })
+
+      .state('contacts',{
+        url:'/contacts',
+        templateUrl: 'components/contacts/contacts.html',
+        controller: 'contactsController',
+        controllerAs: 'contacts'
+      })*/
 
 
-    $urlRouterProvider.otherwise('contactslist');
+    $urlRouterProvider.otherwise('home');
 
   });
