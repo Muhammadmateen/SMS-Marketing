@@ -15,8 +15,9 @@
       var _self = this;
       _self.onHold = false;
       _self.selectedItemClass = "selectedItem";
-      _self.noClass = "noooo";
+     // _self.noClass = "noooo";
       _self.selectedItem ={};
+      _self.selected_length = 0;
       _self.default_img_path = "./img/default_avtar.png";
 
       _self.data = [
@@ -72,14 +73,27 @@
         if(!_self.onHold)
         {
           _self.onHold = true;
+          _self.selected_length++;
           _self.selectedItem[i] = true;
           console.log("If On Hold index : "+i+"and selected Items : ",_self.selectedItem[i]);
         }
         else
         {
-          console.log("Else before : ",_self.selectedItem[i]);
-          _self.selectedItem[i] = !_self.selectedItem[i];
-          console.log("Else after : ",_self.selectedItem[i]);
+         // console.log("Else before : ",_self.selectedItem[i]);
+          if(_self.selectedItem[i])
+         {
+           if(_self.selected_length == 1)
+           _self.onHold = false;
+           _self.selected_length--;
+           _self.selectedItem[i] = false;
+         }
+         else
+         {
+           _self.selected_length++;
+           _self.selectedItem[i] = true
+         }
+          //_self.selectedItem[i] = !_self.selectedItem[i];
+          //console.log("Else after : ",_self.selectedItem[i]);
 
         }
         
@@ -89,10 +103,30 @@
       _self.onTapItem = function (i) {
         if(_self.onHold)
         {
-         console.log("Else before : ",_self.selectedItem[i]);
-          _self.selectedItem[i] = !_self.selectedItem[i];
-          console.log("Else after : ",_self.selectedItem[i]);
+         //console.log("Else before : ",_self.selectedItem[i]);
+         if(_self.selectedItem[i])
+         {
+           if(_self.selected_length == 1)
+           _self.onHold = false;
+           _self.selected_length--;
+           _self.selectedItem[i] = false;
+         }
+         else
+         {
+           _self.selected_length++;
+           _self.selectedItem[i] = true
+         }
+          //_self.selectedItem[i] = !_self.selectedItem[i];
+          //console.log("Else after : ",_self.selectedItem[i]);
         }
+      };
+
+     _self.deleteGroup = function() {
+        console.log("Selected Item : ",_self.selectedItem);
+        for(var ab in _self.selectedItem)
+        {
+            console.log("Key : "+ab+"and value is : ",_self.selectedItem[ab]);
+        };
       };
 
 
