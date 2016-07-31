@@ -13,6 +13,10 @@
       console.log($ionicTabsDelegate.selectedIndex());*/
 
       var _self = this;
+      _self.onHold = false;
+      _self.selectedItemClass = "selectedItem";
+      _self.noClass = "noooo";
+      _self.selectedItem ={};
       _self.default_img_path = "./img/default_avtar.png";
 
       _self.data = [
@@ -35,6 +39,11 @@
           description:'this is hjskds jksd sdjs djsds jk.'
         }
       ];
+
+      for(var i=0;i<_self.data.length;i++)
+      {
+          _self.selectedItem[i] = false;
+      };
 
       _self.abc =
       {
@@ -59,9 +68,31 @@
         console.log("Pull to refresh complete call");
       })
 
-      _self.selectedItem = function(i)
-      {
-        console.log("Item index : ",i);
+      _self.onHoldItem = function(i){
+        if(!_self.onHold)
+        {
+          _self.onHold = true;
+          _self.selectedItem[i] = true;
+          console.log("If On Hold index : "+i+"and selected Items : ",_self.selectedItem[i]);
+        }
+        else
+        {
+          console.log("Else before : ",_self.selectedItem[i]);
+          _self.selectedItem[i] = !_self.selectedItem[i];
+          console.log("Else after : ",_self.selectedItem[i]);
+
+        }
+        
+      };
+
+
+      _self.onTapItem = function (i) {
+        if(_self.onHold)
+        {
+         console.log("Else before : ",_self.selectedItem[i]);
+          _self.selectedItem[i] = !_self.selectedItem[i];
+          console.log("Else after : ",_self.selectedItem[i]);
+        }
       };
 
 
