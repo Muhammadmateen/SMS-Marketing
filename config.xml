@@ -44,4 +44,5 @@
     <plugin name="cordova-plugin-sms" spec="~1.0.5" />
     <plugin name="com.cordova.plugins.sms" spec="https://github.com/cordova-sms/cordova-sms-plugin.git" />
     <plugin name="cordova-sqlite-storage" spec="https://github.com/litehelpers/Cordova-sqlite-storage.git" />
+    <plugin name="cordova-plugin-vibration" spec="~2.1.1" />
 </widget>
