@@ -30,21 +30,45 @@ angular.module('starter', ['ionic','ngCordova'])
   .config(function($stateProvider,$urlRouterProvider,$ionicConfigProvider)
   {
 
+    // $stateProvider.state('main',{
+    //     url:'/main',
+    //     templateUrl: 'components/main/main.html',
+    //     controller: 'mainController',
+    //     controllerAs: 'main'
+    //   })
+
     $stateProvider.state('home',{
       url:'/home',
-      views: {
-        'groups': {
-          templateUrl: 'components/groups/groups.html',
-          controller: 'groupsController',
-          controllerAs: 'groups'
-        },
-        'contacts': {
-          templateUrl: 'components/contacts/contacts.html',
-          controller: 'contactsController',
-          controllerAs: 'contacts'
-        }
-      }
+          templateUrl: 'components/home/home.html',
+          controller: 'homeController',
+          controllerAs: 'home'
     })
+
+
+    //     .state('home',{
+    //   url:'/home',
+    //   views: {
+    //     'groups': {
+    //       templateUrl: 'components/groups/groups.html',
+    //       controller: 'groupsController',
+    //       controllerAs: 'groups'
+    //     },
+    //     'contacts': {
+    //       templateUrl: 'components/contacts/contacts.html',
+    //       controller: 'contactsController',
+    //       controllerAs: 'contacts'
+    //     }
+    //   }
+    // })
+
+      .state('groupdetails',{
+        url:'/groupdetails',
+        templateUrl: 'components/group_details/group_details.html',
+        controller: 'groupDetailsController',
+        controllerAs: 'groupDetails'
+      })
+
+
 
     $ionicConfigProvider.tabs.position('top');
 

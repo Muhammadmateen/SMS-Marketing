@@ -13,3 +13,36 @@
 {
   background-color:cornsilk;
 }
+
+.tabs-top > .tabs, .tabs.tabs-top
+{
+  top: 0px;
+}
+
+.contentDiv
+{
+  margin-top: 50px;
+}
+
+.groupCreate
+{
+  padding: 5%;
+  font-size: x-large;
+}
+
+.roundImage
+{
+  border-radius: 50%;
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 10%
+}
+
+.addImageBtn
+{
+    margin-top: -14%;
+    margin-left: 60%;
+    border-radius: 50%
+}

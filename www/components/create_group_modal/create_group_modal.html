@@ -1,0 +1,30 @@
+<ion-modal-view>
+    <ion-header-bar>
+      <h1 class = "title">Create New Group</h1>
+      <button class="button button-primary" ng-click="home.closeModal()">Cancel</button>
+    </ion-header-bar>
+
+    <ion-content>
+
+        <form class="list">
+               <div > 
+                   <img class="roundImage" ng-src="{{home.group.image || home.group_default_img}}">
+               </div>
+
+               <button class="button icon ion-android-add-circle addImageBtn" ng-click="home.uploadToDrive()"></button>
+
+                <label class="item item-input">
+                    <span class="input-label">Group Name</span>
+                    <input type="text" ng-model="home.group.name">
+                </label>
+
+
+                <button class="button button-full button-positive" ng-click="home.createNewGroup(home.group.name)">
+                    Create
+                </button>
+        </form>
+
+        <ion-spinner icon="bubbles" ng-if="home.newGroupCreateLoader"></ion-spinner>        
+      
+    </ion-content>
+  </ion-modal-view>

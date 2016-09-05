@@ -45,4 +45,6 @@
     <plugin name="com.cordova.plugins.sms" spec="https://github.com/cordova-sms/cordova-sms-plugin.git" />
     <plugin name="cordova-sqlite-storage" spec="https://github.com/litehelpers/Cordova-sqlite-storage.git" />
     <plugin name="cordova-plugin-vibration" spec="~2.1.1" />
+    <plugin name="cordova-plugin-image-picker" spec="https://github.com/wymsee/cordova-imagePicker.git" />
+    <plugin name="cordova-plugin-file" spec="~4.2.0" />
 </widget>

@@ -9,18 +9,45 @@
 
   angular.module('starter')
 
-    .controller("groupsController",function($cordovaSQLite,$ionicTabsDelegate)
+    .controller("groupsController",function($cordovaSQLite,$ionicTabsDelegate,$scope,$state)
     {
-     /* console.log("Data in groups controller");
-      console.log($ionicTabsDelegate.selectedIndex());*/
+      console.log("group controller initilize");
+      /*console.log($ionicTabsDelegate.selectedIndex());*/
 
-      var _self = this;
+      /*var _self = this;
 
-      _self.check = function()
-      {
-        console.log("OK OK ");
+      $scope.fetchGroups = function() {
+        console.log("Data in : ",_self.data);
+        $scope.$broadcast('scroll.refreshComplete');
       };
 
+      _self.data = [
+        {
+          name:'Muhammad Mateen',
+          img:'./img/venkman.jpg',
+          description:'this is hjskds jksd sdjs djsds jk.'
+        },
+        {
+          name:'Muhammad Mateen',
+          description:'this is hjskds jksd sdjs djsds jk.'
+        },
+        {
+          name:'Muhammad Mateen',
+          description:'this is hjskds jksd sdjs djsds jk.'
+        },
+        {
+          name:'Muhammad Mateen',
+          img:'./img/venkman.jpg',
+          description:'this is hjskds jksd sdjs djsds jk.'
+        }
+      ];
+
+      _self.onTapItem = function()
+      {
+        console.log("Fuction call in group file : ")
+        $state.go("groupdetails");
+      }
+*/
       //var db = $cordovaSQLite.openDB({ name: "sms_marketing" ,location: 'default'});
 
 

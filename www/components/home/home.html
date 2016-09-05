@@ -1,0 +1,61 @@
+
+
+<ion-view>
+    <ion-content>
+
+        <ion-tabs  class="tabs-positive tabs-icon-top tabPosition">
+
+            <ion-tab title="Groups" icon-on="icon ion-android-contacts" icon-off="icon ion-android-contacts">
+
+                 <!--<ng-include src="'./components/groups/groups.html'"></ng-include>-->
+                 <ion-content>
+                             <ion-refresher pulling-text="Pull to refresh..." on-refresh="home.ionRefresh()">
+                            </ion-refresher>
+                            <!--<div class="contentDiv">
+                                <h1>Heelo Groups</h1>
+                            </div>-->
+                            <div class="list contentDiv">
+                                <div class="item item-divider groupCreate text-center" ng-click="home.openModal()">
+                                    Create New Group
+                                </div>
+                                    <span ng-repeat="group in home.allGroupsList track by $index">
+                                    <a class="item item-avatar" ui-sref="groupdetails">
+                                        <img ng-src="{{details.img || default_img_path}}">
+                                        <h2>{{group.name}}</h2>
+                                        <p>{{group.description}}</p>
+                                    </a>
+                                    </span>
+                                </div>
+
+                 </ion-content>
+
+
+            </ion-tab>
+
+            <ion-tab title="Contacts" icon-on="icon ion-person" icon-off="icon ion-person">
+                <ion-content>
+                            <ion-refresher pulling-text="Pull to refresh..." on-refresh="home.ionRefresh()">
+                            </ion-refresher>
+
+                                <div class="list contentDiv">
+                                    <span ng-repeat="contacts in home.allContactsList track by $index" on-hold="home.onHoldItem($index)" on-tap="home.onTapItem($index)">
+                                    <a class="item item-avatar" ng-class="home.selectedItem[$index] ? home.selectedItemClass : home.noClass">
+                                        <img ng-src="{{contacts.img || home.default_contact_img}}">
+                                        <h2>{{contacts.name}}</h2>
+                                        <p>{{contacts.mobileNo}}</p>
+                                    </a>
+                                    </span>
+                                </div>
+                                <div ng-if="home.selected_length > 0">
+                                    <h3>{{home.selected_length}} Selected</h3>
+                                    <button class="button button-icon icon ion-android-delete" ng-click="home.deleteGroup()"></button>
+                                </div>
+
+                </ion-content>
+
+            </ion-tab>
+
+        </ion-tabs>
+
+    </ion-content>
+</ion-view>

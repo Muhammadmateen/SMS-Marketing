@@ -12,7 +12,7 @@
       /*console.log("Data in contacts controller");
       console.log($ionicTabsDelegate.selectedIndex());*/
 
-      var db = $cordovaSQLite.openDB({ name: "sms_marketing" ,location: 'default'});
+     /* var db = $cordovaSQLite.openDB({ name: "sms_marketing" ,location: 'default'});
 
       var create_groups_table = "CREATE TABLE IF NOT EXISTS groups (group_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, group_name TEXT NOT NULL)";
 
@@ -20,7 +20,7 @@
         console.log("Table Created : ",res);
       }, function (err) {
           console.error("Error : ",err);
-      });
+      });*/
 
 
       var _self = this;
